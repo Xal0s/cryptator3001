@@ -19,20 +19,20 @@ public class Polybe {
     static {
         for (int i = 0; i < TAILLE; i++) { // On parcourt la grille sur les lignes
             for (int j = 0; j < TAILLE; j++) { // On parcourt la grille sur les colonnes
-                mapCoordonnees.put(grille[i][j], (i + 1) + "" + (j + 1));
+                mapCoordonnees.put(grille[i][j], (i + 1) + "" + (j + 1)); // On ajoute les coordonnées de la lettre
             }
         }
     }
     public static String chiffrer(String texte) { // Chiffre un texte en utilisant la grille de coordonnées
         texte = texte.toUpperCase().replace("J", "I"); // Remplace J par I
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder(); // Résultat final
 
         for (char maLettre : texte.toCharArray()) { // On parcourt les lettres du texte
             if (mapCoordonnees.containsKey(maLettre)) { // On vérifie que la lettre est dans la grille
                 result.append(mapCoordonnees.get(maLettre)).append(" "); // On ajoute les coordonnées de la lettre
             }
         }
-        return result.toString().trim();
+        return result.toString().trim(); // On retourne le résultat
     }
 
     public static String dechiffrer(String code) { // Déchiffre un code en utilisant la grille de coordonnées
