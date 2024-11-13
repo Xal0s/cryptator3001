@@ -36,16 +36,16 @@ public class Polybe {
     }
 
     public static String dechiffrer(String code) { // Déchiffre un code en utilisant la grille de coordonnées
-        StringBuilder result = new StringBuilder(); // Résultat final
-        String[] pairs = code.split(" "); // On sépare les paires
+        StringBuilder resultat = new StringBuilder(); // Résultat final
+        String[] paires = code.split(" "); // On sépare les paires
 
-        for (String pair : pairs) { // On parcourt les paires
-            if (pair.length() == 2) { // On vérifie que la paire est bien de taille 2
-                int row = Character.getNumericValue(pair.charAt(0)) - 1; // On récupère la ligne -1 car on commence à 0
-                int col = Character.getNumericValue(pair.charAt(1)) - 1; // On récupère la colonne -1 car on commence à 0
-                result.append(grille[row][col]); // On ajoute la lettre correspondante
+        for (String paire : paires) { // On parcourt les paires
+            if (paire.length() == 2) { // On vérifie que la paire est bien de taille 2
+                int ligne = Character.getNumericValue(paire.charAt(0)) - 1; // On récupère la ligne -1 car on commence à 0
+                int colonne = Character.getNumericValue(paire.charAt(1)) - 1; // On récupère la colonne -1 car on commence à 0
+                resultat.append(grille[ligne][colonne]); // On ajoute la lettre correspondante
             }
         }
-        return result.toString(); // On retourne le résultat
+        return resultat.toString(); // On retourne le résultat
     }
 }
