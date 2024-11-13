@@ -2,7 +2,7 @@ package RC4;
 
 public class RC4 {
 
-    private byte[] S = new byte[256]; // Tableau S pour la permutation
+    private final byte[] S = new byte[256]; // Tableau S pour la permutation
     private int indiceI = 0; // Indice i
     private int indiceJ = 0; // Indice j
 
