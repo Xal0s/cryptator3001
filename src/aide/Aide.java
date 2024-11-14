@@ -21,6 +21,7 @@ public class Aide {
                 "3 - Retour\n" +
                 "4 - Quitter\n"
             );
+            System.out.print(mdp);
             try{
                 switch (sc.nextInt()) {
                     case 1:
@@ -33,7 +34,7 @@ public class Aide {
                         break;
                     case 3 :
                         choix = false;
-                        Menu.afficherMenu(mdp);
+                        mdp = Menu.afficherMenu(mdp);
                         break;
                     case 4 :
                         choix = false;

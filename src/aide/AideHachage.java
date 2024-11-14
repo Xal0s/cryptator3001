@@ -15,17 +15,19 @@ public class AideHachage {
                             "3 - Retour\n" +
                             "4 - Quitter\n"
             );
-
+            System.out.print(mdp);
             Scanner scan = new Scanner(System.in);
             try{
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
                         MD5.afficherAideMD5();
+                        afficherAideHachage();
                         break;
                     case 2:
                         choix = false;
                         Sha256.afficherAideSha256();
+                        afficherAideHachage();
                         break;
                     case 3:
                         Aide.afficherAide(mdp);

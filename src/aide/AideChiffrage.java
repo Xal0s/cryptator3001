@@ -17,28 +17,33 @@ public class AideChiffrage {
                 "6 - Retour\n" +
                 "7 - Quitter\n"
             );
-
+            System.out.print(mdp);
             Scanner scan = new Scanner(System.in);
             try{
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
                         RotaX.afficherAideRotaX(mdp);
+                        afficherAideChiffrage(mdp);
                         break;
                     case 2:
                         choix = false;
                         Vigenere.afficherAideVigenere(mdp);
+                        afficherAideChiffrage(mdp);
                         break;
                     case 3:
                         choix = false;
                         Polybe.afficherAidePolybe(mdp);
+                        afficherAideChiffrage(mdp);
                         break;
                     case 4:
                         choix = false;
                         Enigma.afficherAideEnigma(mdp);
+                        afficherAideChiffrage(mdp);
                         break;
                     case 5:
                         RC4.afficherAideRC4(mdp);
+                        afficherAideChiffrage(mdp);
                         break;
                     case 6:
                         Aide.afficherAide(mdp);

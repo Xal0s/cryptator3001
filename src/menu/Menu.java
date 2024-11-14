@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void afficherMenu(String mdp) {
+    public static String afficherMenu(String mdp) {
         boolean choix = true;
         while (choix) {
 
@@ -46,5 +46,6 @@ public class Menu {
                 default: System.out.println("\nVotre choix n'est pas disponible\n");
             }
         }
+        return mdp;
     }
 }

@@ -44,7 +44,7 @@ public class MenuHachage {
                         Aide.afficherAide(mdp);
                     case 4 :
                         choix = false;
-                        Menu.afficherMenu(mdp);
+                        mdp = Menu.afficherMenu(mdp);
                     case 5 :
                         System.exit(0);
                     default:

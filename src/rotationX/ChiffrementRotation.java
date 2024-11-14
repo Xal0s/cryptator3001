@@ -22,9 +22,8 @@ public class ChiffrementRotation {
             // Affiche le message chiffré
             System.out.print(charChiffre);
             messageChiffre.append(charChiffre);
-        };
+        }
 
-        System.out.println(messageChiffre);
         return messageChiffre.toString();
     }
 }
