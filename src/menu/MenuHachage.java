@@ -20,7 +20,8 @@ public class MenuHachage {
                     "1 - MD5 \n" +
                     "2 - Sha-256\n" +
                     "3 - Avoir de l'aide\n" +
-                    "4 - Quitter\n"
+                    "4 - Retour\n" +
+                    "5 - Quitter\n"
             );
 
             System.out.println(mdp);
