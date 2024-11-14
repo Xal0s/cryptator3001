@@ -6,17 +6,7 @@ import java.util.Scanner;
 
 public class MD5 {
     // Méthode pour convertir un message en MD5
-    public static void convertirEnMD5() {
-
-        Scanner scanner = new Scanner(System.in); // Crée un objet de type Scanner
-        String entree = ""; // Crée une chaîne de caractères vide
-
-        System.out.println("Entrez un message a hacher :");
-        try{
-            entree = scanner.nextLine(); // Récupère l'entrée de l'utilisateur
-        }catch(Exception e){
-            System.out.println("Une erreur est survenue");
-        }
+    public static String convertirEnMD5(String entree) {
 
         try {
             java.security.MessageDigest digest = java.security.MessageDigest.getInstance("MD5"); // Instancie un objet de type MessageDigest avec l'algorithme MD5
@@ -34,6 +24,7 @@ public class MD5 {
 
             System.out.println(chaineHexadecimale); // Affiche la chaîne hexadécimale
             Menu.afficherMenu(); // Affiche le menu
+            return chaineHexadecimale.toString(); // Retourne la chaîne hexadécimale
 
         } catch(Exception e) {
             throw new RuntimeException(e); // Lève une exception

@@ -6,17 +6,7 @@ import java.util.Scanner;
 
 public class Sha256 {
 
-    public static void convertirEnSha256() {
-
-        Scanner scanner = new Scanner(System.in);
-        String entree = "";
-
-        System.out.println("Entrez un message a hacher :");
-        try{
-            entree = scanner.nextLine();
-        }catch(Exception e){
-            System.out.println("Une erreur est survenue");
-        }
+    public static String convertirEnSha256(String entree) {
 
         try {
             final MessageDigest digest = MessageDigest.getInstance("SHA-256"); // Instancie un objet de type MessageDigest avec l'algorithme SHA-256
@@ -36,7 +26,7 @@ public class Sha256 {
 
             System.out.println(chaineHexadecimale);
 
-            Menu.afficherMenu();
+            return chaineHexadecimale.toString(); // Retourne la chaîne hexadécimale
 
         } catch(Exception e) { // Si une exception est levée
             throw new RuntimeException(e); // Lève une exception
