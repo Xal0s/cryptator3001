@@ -3,7 +3,7 @@ package utils;
 public class ConsoleColor {
 
     // Codes ANSI pour les couleurs
-    public static final String RESET = "\033[0m";  // Réinitialise la couleur
+    public static final String RESET = "\033[0m"; // Réinitialise la couleur
 
     public static final String BLACK = "\033[0;30m";
     public static final String RED = "\033[0;31m";
@@ -28,8 +28,8 @@ public class ConsoleColor {
      * Applique une couleur à un texte donné.
      *
      * @param colorCode Le code couleur ANSI à appliquer
-     * @param message   Le message à colorier
-     * @return          Le message avec le code couleur appliqué
+     * @param message Le message à colorier
+     * @return Le message avec le code couleur appliqué
      */
     public static String colorize(String colorCode, String message) {
         return colorCode + message + RESET;

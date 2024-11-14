@@ -1,9 +1,8 @@
 package menu;
 
 import aide.Aide;
-import motDePasse.DemandeMotDePasse;
-
 import java.util.Scanner;
+import motDePasse.DemandeMotDePasse;
 
 public class Menu {
 
@@ -11,14 +10,14 @@ public class Menu {
         boolean choix = true;
         while (choix) {
 
-            System.out.println(
-                "Voulez-vous :\n" +
-                "1 - Entrer un nouveau mot de passe\n"+
-                "2 - Chiffrer votre mot de passe \n" +
-                "3 - Hacher votre mot de passe\n" +
-                "4 - Avoir de l'aide\n" +
-                "5 - Quitter\n"
-            );
+            System.out.println("""
+                    Voulez-vous :
+                    1 - Entrer un nouveau mot de passe
+                    2 - Chiffrer votre mot de passe
+                    3 - Hacher votre mot de passe
+                    4 - Avoir de l'aide
+                    5 - Quitter
+                    """);
             System.out.println(mdp);
 
             Scanner scan = new Scanner(System.in);
@@ -43,7 +42,8 @@ public class Menu {
                     break;
                 case 5:
                     System.exit(0);
-                default: System.out.println("\nVotre choix n'est pas disponible\n");
+                default:
+                    System.out.println("\nVotre choix n'est pas disponible\n");
             }
         }
         return mdp;

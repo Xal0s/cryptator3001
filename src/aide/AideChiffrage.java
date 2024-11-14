@@ -3,23 +3,23 @@ package aide;
 import java.util.Scanner;
 
 public class AideChiffrage {
-    public static void afficherAideChiffrage(String mdp){
+    public static void afficherAideChiffrage(String mdp) {
         boolean choix = true;
         while (choix) {
 
-            System.out.println(
-                "Sur quelle methode de chiffrement avez vous besoin d'aide ? :\n" +
-                "1 - Rotation(x) \n" +
-                "2 - Vigenère\n" +
-                "3 - Carré de Polybe\n" +
-                "4 - Enigma\n" +
-                "5 - RC4\n" +
-                "6 - Retour\n" +
-                "7 - Quitter\n"
-            );
+            System.out.println("""
+                    Sur quelle methode de chiffrement avez vous besoin d'aide ? :
+                    1 - Rotation(x)
+                    2 - Vigen\u00e8re
+                    3 - Carr\u00e9 de Polybe
+                    4 - Enigma
+                    5 - RC4
+                    6 - Retour
+                    7 - Quitter
+                    """);
             System.out.print(mdp);
             Scanner scan = new Scanner(System.in);
-            try{
+            try {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
@@ -50,9 +50,10 @@ public class AideChiffrage {
                         break;
                     case 7:
                         System.exit(0);
-                    default: System.out.println("\nVotre choix n'est pas disponible\n");
+                    default:
+                        System.out.println("\nVotre choix n'est pas disponible\n");
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("\nVeuillez entrer un choix valide\n");
                 scan.nextLine();
             }
