@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DechiffrementRotation {
 
-    public static void dechiffrementRotation() {
+    public static String dechiffrementRotation() {
         // Création d'un objet Scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
@@ -70,5 +70,7 @@ public class DechiffrementRotation {
 
         // Fermeture du scanner
         scanner.close();
+
+        return message;
     }
 }

@@ -51,8 +51,6 @@ public class ChiffrementRotation {
             messageChiffre.append(charChiffre);
         };
 
-        // Fermeture du scanner
-        scanner.close();
         return messageChiffre.toString();
     }
 }

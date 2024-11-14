@@ -26,16 +26,7 @@ public class Polybe {
             }
         }
     }
-    public static void chiffrer() { // Chiffre un texte en utilisant la grille de coordonnées
-        Scanner scanner = new Scanner(System.in);
-        String texte = "";
-
-        System.out.println("Entrez un message a chiffrer :");
-        try{
-            texte = scanner.nextLine();
-        }catch(Exception e){
-            System.out.println("Une erreur est survenue");
-        }
+    public static String chiffrer(String texte) { // Chiffre un texte en utilisant la grille de coordonnées
 
         texte = texte.toUpperCase().replace("J", "I"); // Remplace J par I
         StringBuilder result = new StringBuilder(); // Résultat final
@@ -45,8 +36,7 @@ public class Polybe {
                 result.append(mapCoordonnees.get(maLettre)).append(" "); // On ajoute les coordonnées de la lettre
             }
         }
-        System.out.println(result);
-        Menu.afficherMenu();
+        return result.toString(); // On retourne le résultat
     }
 
     public static String dechiffrer(String code) { // Déchiffre un code en utilisant la grille de coordonnées

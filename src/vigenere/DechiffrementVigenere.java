@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DechiffrementVigenere {
 
-    public static void dechiffrementVigenere() {
+    public static String dechiffrementVigenere() {
 
 
         // Création d'un objet Scanner pour lire les entrées de l'utilisateur
@@ -71,6 +71,7 @@ public class DechiffrementVigenere {
         // Fermeture du scanner
         scanner.close();
 
+        return message;
 
     }
 }
