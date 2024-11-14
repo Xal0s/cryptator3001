@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ChiffrementRotation {
 
-    public static void chiffrementRotation() {
+    public static String chiffrementRotation() {
         // Création d'un objet Scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
@@ -74,5 +74,7 @@ public class ChiffrementRotation {
         scanner.close();
 
         Menu.afficherMenu();
+
+        return message;
     }
 }

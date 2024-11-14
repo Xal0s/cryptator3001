@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ChiffrementVigenere  {
 
-    public static void chiffrementVigenere() {
+    public static String chiffrementVigenere() {
 
         // Création d'un objet Scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
@@ -72,6 +72,8 @@ public class ChiffrementVigenere  {
         scanner.close();
 
         Menu.afficherMenu();
+
+        return message;
 
     }
 }

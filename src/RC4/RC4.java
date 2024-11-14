@@ -66,7 +66,7 @@ public class RC4 {
         return resultat;
     }
 
-    public static void utilisationRC4() {
+    public static String utilisationRC4() {
 
         Scanner scanner = new Scanner(System.in);
         String texte = "";
@@ -99,5 +99,7 @@ public class RC4 {
         scanner.close();
 
         Menu.afficherMenu();
+
+        return new String(texteChiffre); // Retourne le texte chiffré
     }
 }

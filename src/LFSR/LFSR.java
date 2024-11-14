@@ -40,7 +40,7 @@ public class LFSR {
     }
 
     // Méthode statique pour exécuter le LFSR
-    public static void executerLFSR(int[] positionsXOR, int etatInitial, int tailleBits, int nombreEtapes, int bitsAGenerer) {
+    public static int executerLFSR(int[] positionsXOR, int etatInitial, int tailleBits, int nombreEtapes, int bitsAGenerer) {
         LFSR lfsr = new LFSR(positionsXOR, etatInitial, tailleBits); // Crée une instance de LFSR
         //System.out.println("État initial : " + lfsr.obtenirEtatBinaire(tailleBits)); // Affiche l'état initial
 
@@ -54,5 +54,7 @@ public class LFSR {
         // Génère et affiche un nombre aléatoire de bits spécifié
         int valeurAleatoire = lfsr.generer(bitsAGenerer); // Génère un nombre aléatoire
         //System.out.println("Nombre aléatoire généré sur " + bitsAGenerer + " bits : " + valeurAleatoire); // Affiche le nombre généré
+
+        return valeurAleatoire; // Retourne le nombre généré
     }
 }
