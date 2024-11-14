@@ -22,8 +22,6 @@ public class MD5 {
                 chaineHexadecimale.append(hex); // Ajoute la chaîne hexadécimale à la chaîne hexadécimale
             }
 
-            System.out.println(chaineHexadecimale); // Affiche la chaîne hexadécimale
-            Menu.afficherMenu(); // Affiche le menu
             return chaineHexadecimale.toString(); // Retourne la chaîne hexadécimale
 
         } catch(Exception e) {

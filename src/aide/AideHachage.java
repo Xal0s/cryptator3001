@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class AideHachage {
     public static void afficherAideHachage() {
         boolean choix = true;
+        String mdp = null;
         while (choix) {
 
             System.out.println(
@@ -27,7 +28,7 @@ public class AideHachage {
                         Sha256.afficherAideSha256();
                         break;
                     case 3:
-                        Aide.afficherAide();
+                        Aide.afficherAide(mdp);
                         break;
                     case 4:
                         System.exit(0);

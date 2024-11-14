@@ -22,8 +22,9 @@ public class ChiffrementVigenere  {
             // % 26 : modulo 26, pour rendre l'alphabet circulaire (xyz = abc)
             // + 'a' : Conversion de la position "normal" en un caractère de l'alphabet ASCII pour que l'ordinateur puisse comprendre
             char charChiffre = (char) ((( ci - 'a' + ki - 'a') % 26) + 'a');
-        };
-
+            mdp = mdp.replace(ci, charChiffre);
+        }
+        System.out.println(mdp);
         return mdp;
     }
 }

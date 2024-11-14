@@ -10,8 +10,7 @@ import java.util.Scanner;
 
 public class MenuHachage {
 
-    public static void afficherMenuHachage() {
-
+    public static void afficherMenuHachage(String mdp) {
 
         boolean choix = true;
         while (choix) {
@@ -24,20 +23,22 @@ public class MenuHachage {
                     "4 - Quitter\n"
             );
 
+            System.out.println(mdp);
+
             Scanner scan = new Scanner(System.in);
             try {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
-                        MD5.convertirEnMD5();
+                        MD5.convertirEnMD5(mdp);
                         break;
                     case 2:
                         choix = false;
-                        Sha256.convertirEnSha256();
+                        Sha256.convertirEnSha256(mdp);
                         break;
                     case 3:
                         choix = false;
-                        Aide.afficherAide();
+                        Aide.afficherAide(mdp);
                     case 4:
                         System.exit(0);
                     default:

@@ -66,7 +66,11 @@ public class RC4 {
         return resultat;
     }
 
-    public static String utilisationRC4(String mdp, String cle) {
+    public static String utilisationRC4(String texte, String cle) {
+
+        if (texte == null || cle == null) {
+            throw new IllegalArgumentException("Le texte et la clé ne doivent pas être null.");
+        }
 
         // Convertir le texte et la clé en tableau de bytes
         byte[] texteBytes = texte.getBytes(); // Convertir le texte en tableau de bytes
@@ -76,8 +80,8 @@ public class RC4 {
         RC4 rc4 = new RC4(cleBytes); // Initialiser RC4 avec la clé
 
         byte[] texteChiffre = rc4.chiffrer(texteBytes); // Chiffrer le texte
-        System.out.println(texteChiffre);
 
+        System.out.println(texteChiffre);
         return texteChiffre.toString();
     }
 }

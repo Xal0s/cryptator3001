@@ -1,39 +1,12 @@
 package rotationX;
 
-import menu.Menu;
-
-import java.util.Scanner;
-
 public class ChiffrementRotation {
 
-    public static String chiffrementRotation(String message) {
-
-        String decalageStr;
-        int decalage;
-
-        //Boucle while pour demander à l'utilisateur d'entrer un décalage valide
-        while (true) {
-            // Demander à l'utilisateur d'entrer le décalage
-            System.out.print("Entrez le décalage souhaité (nombre positif) : ");
-
-            //Lit ce que l'utilisateur entre et le stock dans la variable decalageStr
-            decalageStr = scanner.nextLine();
-
-            // Vérifier si le décalage contient uniquement des chiffres
-            if (decalageStr.matches("\\d+")) {
-
-                //Conversion de la chaine de caractere en entier
-                decalage = Integer.parseInt(decalageStr);
-                break;
-            } else {
-                System.out.println("Veuillez entrer un nombre valide pour le décalage.");
-            }
-        }
+    public static String chiffrementRotation(String message, int decalage) {
 
         // Utiliser StringBuilder pour construire le message chiffré
         StringBuilder messageChiffre = new StringBuilder();
 
-        System.out.print("Voici votre message chiffré : ");
         // Boucle "for" pour parcourir chaque caractère de la variable message
         for  (int i = 0; i<message.length(); i++){
 
@@ -51,6 +24,7 @@ public class ChiffrementRotation {
             messageChiffre.append(charChiffre);
         };
 
+        System.out.println(messageChiffre);
         return messageChiffre.toString();
     }
 }

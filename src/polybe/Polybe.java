@@ -50,6 +50,7 @@ public class Polybe {
                 resultat.append(grille[ligne][colonne]); // On ajoute la lettre correspondante
             }
         }
+
         return resultat.toString(); // On retourne le résultat
     }
 }

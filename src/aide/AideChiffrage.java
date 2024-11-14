@@ -3,7 +3,7 @@ package aide;
 import java.util.Scanner;
 
 public class AideChiffrage {
-    public static void afficherAideChiffrage(){
+    public static void afficherAideChiffrage(String mdp){
         boolean choix = true;
         while (choix) {
 
@@ -23,25 +23,25 @@ public class AideChiffrage {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
-                        RotaX.afficherAideRotaX();
+                        RotaX.afficherAideRotaX(mdp);
                         break;
                     case 2:
                         choix = false;
-                        Vigenere.afficherAideVigenere();
+                        Vigenere.afficherAideVigenere(mdp);
                         break;
                     case 3:
                         choix = false;
-                        Polybe.afficherAidePolybe();
+                        Polybe.afficherAidePolybe(mdp);
                         break;
                     case 4:
                         choix = false;
-                        Enigma.afficherAideEnigma();
+                        Enigma.afficherAideEnigma(mdp);
                         break;
                     case 5:
-                        RC4.afficherAideRC4();
+                        RC4.afficherAideRC4(mdp);
                         break;
                     case 6:
-                        Aide.afficherAide();
+                        Aide.afficherAide(mdp);
                         break;
                     case 7:
                         System.exit(0);

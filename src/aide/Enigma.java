@@ -1,7 +1,7 @@
 package aide;
 
 public class Enigma {
-    public static void afficherAideEnigma() {
+    public static String afficherAideEnigma(String mdp) {
         System.out.println("\n" +
                 "Enigma utilise plusieurs rotors (disques circulaires) sur lesquels les lettres de l'alphabet sont inscrites.\n " +
                 "Les rotors tournent à chaque frappe de touche, changeant ainsi le schéma de substitution à chaque lettre.\n" +
@@ -14,7 +14,7 @@ public class Enigma {
                 "Le processus de déchiffrement est le même que le chiffrement. Le destinataire doit connaître la clé (les positions des rotors et les réglages) pour pouvoir inverser le chiffrement\n"
         );
 
-        AideChiffrage.afficherAideChiffrage();
+        return mdp;
     }
 
 }

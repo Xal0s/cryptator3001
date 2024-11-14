@@ -5,7 +5,7 @@ import menu.Menu;
 import java.util.Scanner;
 
 public class Aide {
-    public static void afficherAide(){
+    public static void afficherAide(String mdp){
 
         Scanner sc = new Scanner(System.in);
         Boolean choix = true;
@@ -25,7 +25,7 @@ public class Aide {
                 switch (sc.nextInt()) {
                     case 1:
                         choix = false;
-                        AideChiffrage.afficherAideChiffrage();
+                        AideChiffrage.afficherAideChiffrage(mdp);
                         break;
                     case 2:
                         choix = false;
@@ -33,7 +33,7 @@ public class Aide {
                         break;
                     case 3 :
                         choix = false;
-                        Menu.afficherMenu();
+                        Menu.afficherMenu(mdp);
                         break;
                     case 4 :
                         choix = false;
