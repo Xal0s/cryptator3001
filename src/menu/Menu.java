@@ -26,7 +26,8 @@ public class Menu {
             switch (scan.nextInt()) {
                 case 1:
                     choix = false;
-                    DemandeMotDePasse.demandeMotDePasse();
+                    mdp = DemandeMotDePasse.demandeMotDePasse();
+                    afficherMenu(mdp);
                     break;
                 case 2:
                     choix = false;

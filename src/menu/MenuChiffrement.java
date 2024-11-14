@@ -25,7 +25,7 @@ public class MenuChiffrement {
                 "4 - Carré de Polybe\n" +
                 "5 - Enigma\n" +
                 "6 - Avoir de l'aide\n" +
-                "7 - Avoir de l'enigma\n" +
+                "7 - Retour\n" +
                 "8 - Quitter\n"
             );
             System.out.println(mdp);
