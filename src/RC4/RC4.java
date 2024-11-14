@@ -81,7 +81,6 @@ public class RC4 {
 
         byte[] texteChiffre = rc4.chiffrer(texteBytes); // Chiffrer le texte
 
-        System.out.println(texteChiffre);
         return texteChiffre.toString();
     }
 }

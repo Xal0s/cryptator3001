@@ -17,7 +17,7 @@ public class AideChiffrage {
                 "6 - Retour\n" +
                 "7 - Quitter\n"
             );
-            System.out.print(mdp);
+            System.out.println(mdp);
             Scanner scan = new Scanner(System.in);
             try{
                 switch (scan.nextInt()) {

@@ -21,7 +21,7 @@ public class Aide {
                 "3 - Retour\n" +
                 "4 - Quitter\n"
             );
-            System.out.print(mdp);
+            System.out.println(mdp);
             try{
                 switch (sc.nextInt()) {
                     case 1:
@@ -45,9 +45,9 @@ public class Aide {
             }catch(Exception e){
                 System.out.println("Ce n'est pas une valeure valide");
                 sc.nextLine();
+                Aide.afficherAide(mdp);
             }
         }
-
-
+        sc.close();
     }
 }

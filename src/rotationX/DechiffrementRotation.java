@@ -13,7 +13,7 @@ public class DechiffrementRotation {
         //Boucle while pour demander à l'utilisateur d'entrer un message valide
         while (true) {
             // Demander à l'utilisateur d'entrer le message à déchiffrer
-            System.out.print("Entrez le message à déchiffrer en lettres uniquement (sans espaces ni caractères spéciaux) : ");
+            System.out.println("Entrez le message à déchiffrer en lettres uniquement (sans espaces ni caractères spéciaux) : ");
 
             //Lit ce que l'utilisateur entre et le stock dans la variable message
             message = scanner.nextLine();
@@ -35,7 +35,7 @@ public class DechiffrementRotation {
         //Boucle while pour demander à l'utilisateur d'entrer un décalage valide
         while (true) {
             // Demander à l'utilisateur d'entrer le décalage
-            System.out.print("Entrez le décalage souhaité (nombre positif) : ");
+            System.out.println("Entrez le décalage souhaité (nombre positif) : ");
 
             //Lit ce que l'utilisateur entre et le stock dans la variable decalageStr
             decalageStr = scanner.nextLine();
@@ -51,7 +51,7 @@ public class DechiffrementRotation {
             }
         }
 
-        System.out.print("Voici votre message déchiffré : ");
+        System.out.println("Voici votre message déchiffré : ");
         // Boucle "for" pour parcourir chaque caractère de la variable message
         for  (int i = 0; i<message.length(); i++){
 
@@ -65,7 +65,7 @@ public class DechiffrementRotation {
             // + 'a' : Conversion de la position "normal" en un caractère de l'alphabet ASCII pour que l'ordinateur puisse comprendre
             char charDechiffre = (char) (((ci - 'a' - decalage) % 26) + 'a');
             // Affiche le message déchiffré
-            System.out.print(charDechiffre);
+            System.out.println(charDechiffre);
         };
 
         // Fermeture du scanner

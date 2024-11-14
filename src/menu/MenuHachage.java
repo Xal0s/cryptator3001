@@ -1,10 +1,9 @@
 package menu;
 
-
 import aide.Aide;
 import hash.MD5;
 import hash.Sha256;
-
+import sauvegarde.Sauvegarde;
 
 import java.util.Scanner;
 
@@ -19,9 +18,10 @@ public class MenuHachage {
                     "Quel algorithme voulez-vous utiliser ? :\n" +
                     "1 - MD5 \n" +
                     "2 - Sha-256\n" +
-                    "3 - Avoir de l'aide\n" +
-                    "4 - Retour\n" +
-                    "5 - Quitter\n"
+                    "3 - Sauvegarde\n" +
+                    "4 - Avoir de l'aide\n" +
+                    "5 - Retour\n" +
+                    "6 - Quitter\n"
             );
 
             System.out.println(mdp);
@@ -41,11 +41,17 @@ public class MenuHachage {
                         break;
                     case 3:
                         choix = false;
+                        Sauvegarde.SauvegardeMdp(mdp);
+                        break;
+                    case 4:
+                        choix = false;
                         Aide.afficherAide(mdp);
-                    case 4 :
+                        break;
+                    case 5 :
                         choix = false;
                         mdp = Menu.afficherMenu(mdp);
-                    case 5 :
+                        break;
+                    case 6 :
                         System.exit(0);
                     default:
                         System.out.println("\nVotre choix n'est pas disponible\n");
