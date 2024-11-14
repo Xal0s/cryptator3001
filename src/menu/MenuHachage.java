@@ -30,16 +30,21 @@ public class MenuHachage {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
-                        MD5.convertirEnMD5(mdp);
+                        mdp = MD5.convertirEnMD5(mdp);
+                        Menu.afficherMenu(mdp);
                         break;
                     case 2:
                         choix = false;
-                        Sha256.convertirEnSha256(mdp);
+                        mdp = Sha256.convertirEnSha256(mdp);
+                        Menu.afficherMenu(mdp);
                         break;
                     case 3:
                         choix = false;
                         Aide.afficherAide(mdp);
-                    case 4:
+                    case 4 :
+                        choix = false;
+                        Menu.afficherMenu(mdp);
+                    case 5 :
                         System.exit(0);
                     default:
                         System.out.println("\nVotre choix n'est pas disponible\n");

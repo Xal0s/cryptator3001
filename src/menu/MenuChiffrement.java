@@ -108,7 +108,10 @@ public class MenuChiffrement {
                     choix = false;
                     Aide.afficherAide(mdp);
                     break;
-                case 7:
+                case 7 :
+                    choix = false;
+                    Menu.afficherMenu(mdp);
+                case 8:
                     System.exit(0);
                 default:
                     System.out.println("\nVotre choix n'est pas disponible\n");
