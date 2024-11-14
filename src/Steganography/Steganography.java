@@ -15,10 +15,10 @@ public class Steganography {
         // Ajouter la longueur du message dans les premiers pixels
         for (int i = 0; i < 32; i++) {
             int pixel = image.getRGB(i % image.getWidth(), i / image.getWidth()); // Récupérer le pixel
-            int bleu = pixel & 0xFF; // Extraire la composante bleue
+            int blue = pixel & 0xFF; // Extraire la composante bleue
             int bit = (messageLength >> (31 - i)) & 1; // Extraire le bit de la longueur du message
-            bleu = (bleu & 0xFE) | bit; // Modifier le bit de poids faible
-            pixel = (pixel & 0xFFFFFF00) | bleu; // Mettre à jour la composante bleue
+            blue = (blue & 0xFE) | bit; // Modifier le bit de poids faible
+            pixel = (pixel & 0xFFFFFF00) | blue; // Mettre à jour la composante bleue
             image.setRGB(i % image.getWidth(), i / image.getWidth(), pixel); // Mettre à jour le pixel
         }
 
