@@ -1,5 +1,7 @@
 package vigenere;
 
+import menu.Menu;
+
 import java.util.Scanner;
 
 public class ChiffrementVigenere  {
@@ -68,6 +70,8 @@ public class ChiffrementVigenere  {
 
         // Fermeture du scanner
         scanner.close();
+
+        Menu.afficherMenu();
 
     }
 }

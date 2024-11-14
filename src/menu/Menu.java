@@ -1,27 +1,24 @@
 package menu;
 
 import aide.Aide;
+import motDePasse.DemandeMotDePasse;
 
 import java.util.Scanner;
 
 public class Menu {
 
     public static void afficherMenu() {
-
-        System.out.println(
-                "****************************\n" +
-                "**Bienvenue sur PaKassable**\n" +
-                "****************************\n"
-        );
+        String motDePasse;
         boolean choix = true;
         while (choix) {
 
             System.out.println(
                     "Voulez-vous :\n" +
-                    "1 - Chiffrer votre mot de passe \n" +
-                    "2 - Hacher votre mot de passe\n" +
-                    "3 - Avoir de l'aide\n" +
-                    "4 - Quitter\n"
+                    "1 - Entrer un mot de passe\n"+
+                    "2 - Chiffrer votre mot de passe \n" +
+                    "3 - Hacher votre mot de passe\n" +
+                    "4 - Avoir de l'aide\n" +
+                    "5 - Quitter\n"
             );
 
             Scanner scan = new Scanner(System.in);
@@ -29,25 +26,27 @@ public class Menu {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
-                        System.out.println("Le choix 1 ");
+                        DemandeMotDePasse.demandeMotDePasse();
                         break;
                     case 2:
                         choix = false;
-                        System.out.println("Le choix 2 ");
+                        MenuChiffrement.afficherMenuChiffrement();
                         break;
                     case 3:
                         choix = false;
-                        Aide.afficherAide();
+                        MenuHachage.afficherMenuHachage();
                         break;
                     case 4:
+                        choix = false;
+                        Aide.afficherAide();
+                        break;
+                    case 5:
                         System.exit(0);
                     default: System.out.println("\nVotre choix n'est pas disponible\n");
                 }
             }catch(Exception e){
                 System.out.println("\nVeuillez entrer un chiffre valide\n");
             }
-
         }
-
     }
 }

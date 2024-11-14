@@ -1,5 +1,9 @@
 package RC4;
 
+import menu.Menu;
+
+import java.util.Scanner;
+
 public class RC4 {
 
     private final byte[] S = new byte[256]; // Tableau S pour la permutation
@@ -62,7 +66,26 @@ public class RC4 {
         return resultat;
     }
 
-    public String  utilisationRC4(String texte, String cle) {
+    public static void utilisationRC4() {
+
+        Scanner scanner = new Scanner(System.in);
+        String texte = "";
+        String cle = "";
+
+        System.out.println("Entrez un message a chiffrer :");
+        try{
+            texte = scanner.nextLine();
+        }catch(Exception e){
+            System.out.println("Une erreur est survenue");
+        }
+
+        System.out.println("Entrez une cle pour chiffrer :");
+        try{
+            cle = scanner.nextLine();
+        }catch(Exception e){
+            System.out.println("Une erreur est survenue");
+        }
+
         // Convertir le texte et la clé en tableau de bytes
         byte[] texteBytes = texte.getBytes(); // Convertir le texte en tableau de bytes
         byte[] cleBytes = cle.getBytes(); // Convertir la clé en tableau de bytes
@@ -71,7 +94,10 @@ public class RC4 {
         RC4 rc4 = new RC4(cleBytes); // Initialiser RC4 avec la clé
 
         byte[] texteChiffre = rc4.chiffrer(texteBytes); // Chiffrer le texte
-        return new String(texteChiffre); // Retourner le texte chiffré
+        System.out.println(texteChiffre);
 
+        scanner.close();
+
+        Menu.afficherMenu();
     }
 }

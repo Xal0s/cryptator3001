@@ -1,5 +1,7 @@
 package rotationX;
 
+import menu.Menu;
+
 import java.util.Scanner;
 
 public class ChiffrementRotation {
@@ -70,5 +72,7 @@ public class ChiffrementRotation {
 
         // Fermeture du scanner
         scanner.close();
+
+        Menu.afficherMenu();
     }
 }
