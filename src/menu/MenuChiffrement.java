@@ -18,10 +18,10 @@ public class MenuChiffrement {
         while (choix) {
             System.out.println("""
                     Quel algorithme voulez-vous utiliser ? :
-                    1 - Rotation(x)
-                    2 - Vigen\u00e8re
+                    1 - Rotation (Rotax)
+                    2 - Vigenère
                     3 - RC4
-                    4 - Carr\u00e9 de Polybe
+                    4 - Carré de Polybe
                     5 - Enigma
                     6 - Avoir de l'aide
                     7 - Retour
@@ -35,10 +35,10 @@ public class MenuChiffrement {
 
             switch (option) {
                 case 1:
-                    // Vérification des caractères dans le mot de passe
-                    if (!mdp.matches("[a-z0-9 ]+")) {
+                    // Vérification des caractères dans le mot de passe pour Rotation (Rotax)
+                    if (!mdp.matches("[a-zA-Z]+")) { // Exclut les chiffres et les espaces
                         System.out.println(
-                                "Le chiffrement par rotation ne supporte pas les majuscules ni les caractères spéciaux.");
+                                "Le chiffrement par rotation ne supporte pas les chiffres ni les caractères spéciaux.");
                         break;
                     }
                     // Boucle pour demander un décalage valide
@@ -59,10 +59,11 @@ public class MenuChiffrement {
                     break;
 
                 case 2:
-                    // Vérification des caractères dans le mot de passe
-                    if (!mdp.matches("[a-zA-Z0-9 ]+")) {
+                    // Vérification des caractères dans le mot de passe pour Vigenère
+                    if (!mdp.matches("[a-zA-Z]+")) { // Exclut les chiffres et les caractères
+                                                     // spéciaux
                         System.out.println(
-                                "Le chiffrement de Vigenère ne supporte pas les caractères spéciaux.");
+                                "Le chiffrement de Vigenère ne supporte pas les chiffres ni les caractères spéciaux.");
                         break;
                     }
                     // Boucle pour demander une clé valide
@@ -71,7 +72,7 @@ public class MenuChiffrement {
                                 "Entrez la clé en lettres uniquement (sans espaces ni caractères spéciaux) : ");
                         cle = scanner.nextLine();
                         if (cle.matches("[a-zA-Z]+")) {
-                            cle = cle.toLowerCase(); // Convertir en minuscules
+                            cle = cle.toLowerCase(); // Convertir en minuscules si nécessaire
                             break;
                         } else {
                             System.out.println(
@@ -96,10 +97,10 @@ public class MenuChiffrement {
                     break;
 
                 case 4:
-                    // Vérification des caractères dans le mot de passe
-                    if (!mdp.matches("[a-z0-9 ]+")) {
+                    // Vérification des caractères dans le mot de passe pour le carré de Polybe
+                    if (!mdp.matches("[a-zA-Z]+")) { // Exclut les chiffres et les espaces
                         System.out.println(
-                                "Le carré de Polybe ne supporte pas les majuscules ni les caractères spéciaux.");
+                                "Le carré de Polybe ne supporte pas les chiffres ni les caractères spéciaux.");
                         break;
                     }
                     mdp = Polybe.chiffrer(mdp);
