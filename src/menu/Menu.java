@@ -7,18 +7,17 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void afficherMenu() {
-        String motDePasse;
+    public static void afficherMenu(String mdp) {
         boolean choix = true;
         while (choix) {
 
             System.out.println(
-                    "Voulez-vous :\n" +
-                    "1 - Entrer un mot de passe\n"+
-                    "2 - Chiffrer votre mot de passe \n" +
-                    "3 - Hacher votre mot de passe\n" +
-                    "4 - Avoir de l'aide\n" +
-                    "5 - Quitter\n"
+                "Voulez-vous :\n" +
+                "1 - Entrer un mot de passe\n"+
+                "2 - Chiffrer votre mot de passe \n" +
+                "3 - Hacher votre mot de passe\n" +
+                "4 - Avoir de l'aide\n" +
+                "5 - Quitter\n"
             );
 
             Scanner scan = new Scanner(System.in);
@@ -30,11 +29,11 @@ public class Menu {
                         break;
                     case 2:
                         choix = false;
-                        MenuChiffrement.afficherMenuChiffrement();
+                        MenuChiffrement.afficherMenuChiffrement(mdp);
                         break;
                     case 3:
                         choix = false;
-                        MenuHachage.afficherMenuHachage();
+                        MenuHachage.afficherMenuHachage(mdp);
                         break;
                     case 4:
                         choix = false;

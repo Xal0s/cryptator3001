@@ -6,30 +6,7 @@ import java.util.Scanner;
 
 public class ChiffrementRotation {
 
-    public static void chiffrementRotation() {
-        // Création d'un objet Scanner pour lire les entrées de l'utilisateur
-        Scanner scanner = new Scanner(System.in);
-
-        String message;
-
-        //Boucle while pour demander à l'utilisateur d'entrer un message valide
-        while (true) {
-            // Demander à l'utilisateur d'entrer le message à chiffrer
-            System.out.print("Entrez le message à chiffrer en lettres uniquement (sans espaces ni caractères spéciaux) : ");
-
-            //lit ce que l'utilisateur entre et le stock dans la variable message
-            message = scanner.nextLine();
-
-            // Vérifier si le message contient uniquement des lettres alphabétiques
-            if (message.matches("[a-zA-Z]+")) {
-                // Convertir en minuscules pour le chiffrement
-                message = message.toLowerCase();
-                break;
-            } else {
-                System.out.println("Le message doit contenir uniquement des lettres (sans espaces ni caractères spéciaux). Veuillez réessayer.");
-            }
-        }
-
+    public static String chiffrementRotation(String message) {
 
         String decalageStr;
         int decalage;
@@ -53,6 +30,9 @@ public class ChiffrementRotation {
             }
         }
 
+        // Utiliser StringBuilder pour construire le message chiffré
+        StringBuilder messageChiffre = new StringBuilder();
+
         System.out.print("Voici votre message chiffré : ");
         // Boucle "for" pour parcourir chaque caractère de la variable message
         for  (int i = 0; i<message.length(); i++){
@@ -68,11 +48,11 @@ public class ChiffrementRotation {
             char charChiffre = (char) (((ci - 'a' + decalage) % 26) + 'a');
             // Affiche le message chiffré
             System.out.print(charChiffre);
+            messageChiffre.append(charChiffre);
         };
 
         // Fermeture du scanner
         scanner.close();
-
-        Menu.afficherMenu();
+        return messageChiffre.toString();
     }
 }

@@ -66,38 +66,17 @@ public class RC4 {
         return resultat;
     }
 
-    public static void utilisationRC4() {
-
-        Scanner scanner = new Scanner(System.in);
-        String texte = "";
-        String cle = "";
-
-        System.out.println("Entrez un message a chiffrer :");
-        try{
-            texte = scanner.nextLine();
-        }catch(Exception e){
-            System.out.println("Une erreur est survenue");
-        }
-
-        System.out.println("Entrez une cle pour chiffrer :");
-        try{
-            cle = scanner.nextLine();
-        }catch(Exception e){
-            System.out.println("Une erreur est survenue");
-        }
+    public static String utilisationRC4(String mdp, String cle) {
 
         // Convertir le texte et la clé en tableau de bytes
-        byte[] texteBytes = texte.getBytes(); // Convertir le texte en tableau de bytes
+        byte[] texteBytes = mdp.getBytes(); // Convertir le texte en tableau de bytes
         byte[] cleBytes = cle.getBytes(); // Convertir la clé en tableau de bytes
 
         // Créer une instance de RC4 avec la clé
         RC4 rc4 = new RC4(cleBytes); // Initialiser RC4 avec la clé
 
         byte[] texteChiffre = rc4.chiffrer(texteBytes); // Chiffrer le texte
-        System.out.println(texteChiffre);
 
-        scanner.close();
-
-        Menu.afficherMenu();
+        return texteChiffre.toString();
     }
 }

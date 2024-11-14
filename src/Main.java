@@ -1,7 +1,10 @@
 import menu.Menu;
+import motDePasse.DemandeMotDePasse;
 
 public class Main {
     public static void main(String[] args) {
+
+        String mdp = "";
 
         System.out.println(
             "****************************\n" +
@@ -9,7 +12,9 @@ public class Main {
             "****************************\n"
         );
 
-        Menu.afficherMenu();
+        mdp = DemandeMotDePasse.demandeMotDePasse();
+
+        Menu.afficherMenu(mdp);
 
     }
 }
