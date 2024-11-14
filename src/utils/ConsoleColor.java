@@ -39,6 +39,7 @@ public class ConsoleColor {
     public static void test(String[] args) {
         System.out.println(ConsoleColor.colorize(ConsoleColor.RED, "Texte en rouge"));
         System.out.println(ConsoleColor.colorize(ConsoleColor.GREEN, "Texte en vert"));
+        System.out.println(ConsoleColor.colorize(ConsoleColor.BLUE, "Texte en bleu"));
         System.out.println(ConsoleColor.colorize(ConsoleColor.BLUE_BOLD, "Texte en bleu gras"));
     }
 }
