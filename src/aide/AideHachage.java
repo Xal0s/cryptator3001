@@ -27,7 +27,7 @@ public class AideHachage {
                         Sha256.afficherAideSha256();
                         break;
                     case 3:
-                        AideHachage.afficherAideHachage();
+                        Aide.afficherAide();
                         break;
                     case 4:
                         System.exit(0);
@@ -35,6 +35,8 @@ public class AideHachage {
                 }
             }catch(Exception e){
                 System.out.println("\nVeuillez entrer un choix valide\n");
+                scan.nextLine();
+
             }
         }
     }

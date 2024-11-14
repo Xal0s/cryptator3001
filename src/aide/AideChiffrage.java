@@ -49,6 +49,7 @@ public class AideChiffrage {
                 }
             }catch(Exception e){
                 System.out.println("\nVeuillez entrer un choix valide\n");
+                scan.nextLine();
             }
         }
     }

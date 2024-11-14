@@ -38,9 +38,12 @@ public class Aide {
                     case 4 :
                         choix = false;
                         System.exit(0);
+                    default:
+                        System.out.println("Ce n'est pas un choix valide");
                 }
             }catch(Exception e){
-                System.out.println("Ce n'est pas un choix valide");
+                System.out.println("Ce n'est pas une valeure valide");
+                sc.nextLine();
             }
         }
 
