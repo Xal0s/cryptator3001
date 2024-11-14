@@ -8,7 +8,7 @@ import javax.crypto.SecretKey;
 
 public class aes {
 
-    public static void main(String[] args) throws Exception {
+    public static void AES(String[] args) throws Exception {
         // Génère une clé secrète pour l'algorithme AES
         SecretKey cle = KeyGenerator.getInstance("AES").generateKey();
         try (Scanner scanner = new Scanner(System.in)) {
