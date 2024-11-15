@@ -9,12 +9,13 @@ public class Anneau{
     public static void anneau() {
         // Tableau double dimensions contenant les configurations de décalages pour chaque position de l'anneau
         int[][] configurations = {
-                //Configuration du décalage de chaque lettre pour chaque anneau de 1 à 26, pour l'instant j'en met que 4
 
-                {3, 15, 27, 4, 18, 12, 24, 6, 21, 13, 8, 9, 29, 10, 7, 2, 25, 1, 14, 17, 22, 5, 20, 30, 23, 26},
-                {8, 1, 20, 19, 7, 12, 23, 11, 30, 25, 9, 4, 15, 6, 2, 16, 28, 5, 27, 3, 21, 13, 17, 24, 18, 22},
-                {10, 4, 6, 25, 28, 11, 1, 5, 23, 13, 12, 18, 9, 27, 15, 2, 19, 14, 7, 22, 3, 30, 21, 16, 26, 17},
-                {14, 20, 1, 18, 6, 27, 19, 24, 5, 12, 25, 11, 15, 2, 28, 30, 17, 10, 22, 13, 21, 9, 7, 4, 3, 16}
+            //Configuration du décalage de chaque lettre pour chaque anneau de 1 à 26 de maniere bijective et déterministe, pour l'instant j'en met que 4
+            {3, 15, 27, 4, 18, 12, 24, 6, 21, 13, 8, 9, 29, 10, 7, 2, 25, 1, 14, 17, 22, 5, 20, 30, 23, 26},
+            {8, 1, 20, 19, 7, 12, 23, 11, 30, 25, 9, 4, 15, 6, 2, 16, 28, 5, 27, 3, 21, 13, 17, 24, 18, 22},
+            {10, 4, 6, 25, 28, 11, 1, 5, 23, 13, 12, 18, 9, 27, 15, 2, 19, 14, 7, 22, 3, 30, 21, 16, 26, 17},
+            {14, 20, 1, 18, 6, 27, 19, 24, 5, 12, 25, 11, 15, 2, 28, 30, 17, 10, 22, 13, 21, 9, 7, 4, 3, 16}
+
 
         };
 
