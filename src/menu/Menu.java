@@ -16,9 +16,10 @@ public class Menu {
                 "1 - Entrer un nouveau mot de passe\n"+
                 "2 - Chiffrer votre mot de passe \n" +
                 "3 - Hacher votre mot de passe\n" +
-                "4 - Sauvegarde\n" +
-                "5 - Avoir de l'aide\n" +
-                "6 - Quitter\n"
+                "4 - Dechiffrer votre mot de passe"+
+                "5 - Sauvegarde\n" +
+                "6 - Avoir de l'aide\n" +
+                "7 - Quitter\n"
             );
             System.out.println(mdp);
 
@@ -41,14 +42,17 @@ public class Menu {
                         break;
                     case 4:
                         choix = false;
+                        MenuDechiffrement.afficherMenuDechiffrement(mdp);
+                    case 5:
+                        choix = false;
                         Sauvegarde.SauvegardeMdp(mdp);
                         Menu.afficherMenu(mdp);
                         break;
-                    case 5:
+                    case 6:
                         choix = false;
                         Aide.afficherAide(mdp);
                         break;
-                    case 6:
+                    case 7:
                         System.exit(0);
                     default:
                         System.out.println("\nVotre choix n'est pas disponible\n");
