@@ -2,6 +2,7 @@ package menu;
 
 import AES.aes;
 import RC4.RC4;
+import Steganography.Steganography;
 import aide.Aide;
 import java.util.Scanner;
 import javax.crypto.SecretKey;
@@ -26,10 +27,11 @@ public class MenuDechiffrement {
                         3 - RC4
                         4 - Carr\u00e9 de Polybe
                         5 - AES
-                        6 - Sauvegarder
-                        7 - Avoir de l'aide
-                        8 - Retour
-                        9 - Quitter
+                        6 - Steganographie
+                        7 - Sauvegarder
+                        8 - Avoir de l'aide
+                        9 - Retour
+                        10 - Quitter
                         """);
                 System.out.println(mdp);
 
@@ -126,16 +128,31 @@ public class MenuDechiffrement {
                                 }
                                 break;
                             case 6:
-                                Sauvegarde.SauvegardeMdp(mdp);
+                                scanner.nextLine();
+                                System.out.println("Entrez le chemin de l'image à lire (tapez 1 pour avoir un chemin par défaut pour tester) :");
+                                String cheminImage = scanner.nextLine();
+                                if (cheminImage == "1") {
+                                    cheminImage = "imagesResult/chat_cacher.jpg";
+                                }
+                                try {
+                                    Steganography.lireMessage(cheminImage);
+                                    System.out.println("Message caché dans l'image avec succès.");
+                                } catch (Exception e) {
+                                    System.out.println("Erreur lors de la stéganographie : " + e);
+                                }
+                                Menu.afficherMenu(mdp);
                                 break;
                             case 7:
-                                Aide.afficherAide(mdp);
+                                Sauvegarde.SauvegardeMdp(mdp);
                                 break;
                             case 8:
+                                Aide.afficherAide(mdp);
+                                break;
+                            case 9:
                                 scanner.nextLine();
                                 Menu.afficherMenu(mdp);
                                 break;
-                            case 9:
+                            case 10:
                                 System.exit(0);
                             default:
                                 System.out.println("\nVotre choix n'est pas disponible\n");

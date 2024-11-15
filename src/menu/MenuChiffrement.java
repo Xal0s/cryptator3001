@@ -2,7 +2,10 @@ package menu;
 
 import AES.aes;
 import RC4.RC4;
+import Steganography.Steganography;
 import aide.Aide;
+
+import java.io.File;
 import java.util.Scanner;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -26,9 +29,10 @@ public class MenuChiffrement {
                             3 - RC4
                             4 - Carré de Polybe
                             5 - AES
-                            6 - Avoir de l'aide
-                            7 - Retour
-                            8 - Quitter
+                            6 - Steganographie
+                            7 - Avoir de l'aide
+                            8 - Retour
+                            9 - Quitter
                             """);
                     System.out.println("Mot de passe actuel : " + mdp);
 
@@ -142,17 +146,32 @@ public class MenuChiffrement {
                             }
                             break;
 
-                        case 6:
-                            choix = false;
-                            Aide.afficherAide(mdp);
+                        case 6: // Steganographie
+                            System.out.println("Entrez le chemin de l'image à cacher le message (tapez 1 pour avoir un chemin par défaut pour tester) :");
+                            String cheminImage = scanner.nextLine();
+                            if (cheminImage == "1") {
+                                cheminImage = "images/chat.jpg";
+                            }
+                            try {
+                                Steganography.cacherMessage(cheminImage, mdp);
+                                System.out.println("Message caché dans l'image avec succès.");
+                            } catch (Exception e) {
+                                System.out.println("Erreur lors de la stéganographie : " + e);
+                            }
+                            Menu.afficherMenu(mdp);
                             break;
 
                         case 7:
                             choix = false;
-                            Menu.afficherMenu(mdp);
+                            Aide.afficherAide(mdp);
                             break;
 
                         case 8:
+                            choix = false;
+                            Menu.afficherMenu(mdp);
+                            break;
+
+                        case 9:
                             System.exit(0);
 
                         default:
