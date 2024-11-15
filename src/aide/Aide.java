@@ -10,19 +10,18 @@ public class Aide {
         Boolean choix = true;
 
         System.out.println(
-                """
-                        Sur PaKassable, vous avez la possibilit\u00e9 de chiffrer/d\u00e9chiffrer et de hacher un mot de passe avec plusieurs methode differentes:
-                        Sur quelle fonction souhaitez vous de l'aide ?
-                        """);
-        while (choix) {
-            System.out.println("""
-                    1 - Chiffrage/D\u00e9chiffrage
-                    2 - Hachage
-                    3 - Retour
-                    4 - Quitter
-                    """);
-            System.out.print(mdp);
-            try {
+                "Sur PaKassable, vous avez la possibilité de chiffrer/déchiffrer et de hacher un mot de passe avec plusieurs methode differentes:\n"+
+                "Sur quelle fonction souhaitez vous de l'aide ? \n"
+        );
+        while(choix){
+            System.out.println(
+                "1 - Chiffrage/Déchiffrage\n" +
+                "2 - Hachage\n" +
+                "3 - Retour\n" +
+                "4 - Quitter\n"
+            );
+            System.out.println(mdp);
+            try{
                 switch (sc.nextInt()) {
                     case 1:
                         choix = false;
@@ -45,9 +44,9 @@ public class Aide {
             } catch (Exception e) {
                 System.out.println("Ce n'est pas une valeure valide");
                 sc.nextLine();
+                Aide.afficherAide(mdp);
             }
         }
-
-
+        sc.close();
     }
 }

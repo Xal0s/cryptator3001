@@ -1,9 +1,9 @@
 package menu;
 
-
 import aide.Aide;
 import hash.MD5;
 import hash.Sha256;
+import sauvegarde.Sauvegarde;
 import java.util.Scanner;
 
 public class MenuHachage {
@@ -13,14 +13,15 @@ public class MenuHachage {
         boolean choix = true;
         while (choix) {
 
-            System.out.println("""
-                    Quel algorithme voulez-vous utiliser ? :
-                    1 - MD5
-                    2 - Sha-256
-                    3 - Avoir de l'aide
-                    4 - Retour
-                    5 - Quitter
-                    """);
+            System.out.println(
+                    "Quel algorithme voulez-vous utiliser ? :\n" +
+                    "1 - MD5 \n" +
+                    "2 - Sha-256\n" +
+                    "3 - Sauvegarde\n" +
+                    "4 - Avoir de l'aide\n" +
+                    "5 - Retour\n" +
+                    "6 - Quitter\n"
+            );
 
             System.out.println(mdp);
 
@@ -39,17 +40,25 @@ public class MenuHachage {
                         break;
                     case 3:
                         choix = false;
-                        Aide.afficherAide(mdp);
+                        Sauvegarde.SauvegardeMdp(mdp);
+                        break;
                     case 4:
                         choix = false;
+                        Aide.afficherAide(mdp);
+                        break;
+                    case 5 :
+                        choix = false;
+                        scan.nextLine();
                         mdp = Menu.afficherMenu(mdp);
-                    case 5:
+                        break;
+                    case 6 :
                         System.exit(0);
                     default:
                         System.out.println("\nVotre choix n'est pas disponible\n");
                 }
             } catch (Exception e) {
-                System.out.println("\nVeuillez entrer un chiffre valide\n");
+                System.out.println("Veuillez entrer un chiffre valide\n");
+                scan.nextLine();
             }
         }
     }

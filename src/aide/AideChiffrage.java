@@ -6,18 +6,18 @@ public class AideChiffrage {
     public static void afficherAideChiffrage(String mdp) {
         boolean choix = true;
         while (choix) {
-
-            System.out.println("""
-                    Sur quelle methode de chiffrement avez vous besoin d'aide ? :
-                    1 - Rotation(x)
-                    2 - Vigen\u00e8re
-                    3 - Carr\u00e9 de Polybe
-                    4 - Enigma
-                    5 - RC4
-                    6 - Retour
-                    7 - Quitter
-                    """);
-            System.out.print(mdp);
+            System.out.println(
+                "Sur quelle methode de chiffrement avez vous besoin d'aide ? :\n" +
+                "1 - Rotation(x) \n" +
+                "2 - Vigenère\n" +
+                "3 - Carré de Polybe\n" +
+                "4 - Enigma\n" +
+                "5 - RC4\n" +
+                "6 - Retour\n" +
+                "7 - Quitter\n"
+            );
+            System.out.println(mdp);
+          
             Scanner scan = new Scanner(System.in);
             try {
                 switch (scan.nextInt()) {

@@ -22,7 +22,6 @@ public class ChiffrementRotation {
             // que l'ordinateur puisse comprendre
             char charChiffre = (char) (((ci - 'a' + decalage) % 26) + 'a');
             // Affiche le message chiffré
-            System.out.print(charChiffre);
             messageChiffre.append(charChiffre);
         }
 
