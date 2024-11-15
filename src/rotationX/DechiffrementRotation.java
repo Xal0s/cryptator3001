@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class DechiffrementRotation {
 
-    public static String dechiffrementRotation(String message, String decalageStr) {
+    public static String dechiffrementRotation(String message, int decalage) {
 
-        int decalage = Integer.parseInt(decalageStr);
         // Boucle "for" pour parcourir chaque caractère de la variable message
         for (int i = 0; i < message.length(); i++) {
 
