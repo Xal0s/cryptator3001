@@ -1,5 +1,7 @@
 package rotationX;
 
+import java.util.Scanner;
+
 public class DechiffrementRotation {
 
     public static String dechiffrementRotation(String message, int decalage) {
