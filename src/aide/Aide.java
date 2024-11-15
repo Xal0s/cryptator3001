@@ -1,11 +1,10 @@
 package aide;
 
+import java.util.Scanner;
 import menu.Menu;
 
-import java.util.Scanner;
-
 public class Aide {
-    public static void afficherAide(String mdp){
+    public static void afficherAide(String mdp) {
 
         Scanner sc = new Scanner(System.in);
         Boolean choix = true;
@@ -32,17 +31,17 @@ public class Aide {
                         choix = false;
                         AideHachage.afficherAideHachage();
                         break;
-                    case 3 :
+                    case 3:
                         choix = false;
                         mdp = Menu.afficherMenu(mdp);
                         break;
-                    case 4 :
+                    case 4:
                         choix = false;
                         System.exit(0);
                     default:
                         System.out.println("Ce n'est pas un choix valide");
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("Ce n'est pas une valeure valide");
                 sc.nextLine();
                 Aide.afficherAide(mdp);

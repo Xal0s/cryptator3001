@@ -4,7 +4,6 @@ import aide.Aide;
 import hash.MD5;
 import hash.Sha256;
 import sauvegarde.Sauvegarde;
-
 import java.util.Scanner;
 
 public class MenuHachage {
@@ -58,7 +57,7 @@ public class MenuHachage {
                         System.out.println("\nVotre choix n'est pas disponible\n");
                 }
             } catch (Exception e) {
-                System.out.println("\nVeuillez entrer un chiffre valide\n");
+                System.out.println("Veuillez entrer un chiffre valide\n");
                 scan.nextLine();
             }
         }

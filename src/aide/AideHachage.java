@@ -8,16 +8,16 @@ public class AideHachage {
         String mdp = null;
         while (choix) {
 
-            System.out.println(
-                    "Sur quelle methode de hash avez vous besoin d'aide ? :\n" +
-                            "1 - MD5 \n" +
-                            "2 - Sha-256\n" +
-                            "3 - Retour\n" +
-                            "4 - Quitter\n"
-            );
+            System.out.println("""
+                    Sur quelle methode de hash avez vous besoin d'aide ? :
+                    1 - MD5
+                    2 - Sha-256
+                    3 - Retour
+                    4 - Quitter
+                    """);
             System.out.print(mdp);
             Scanner scan = new Scanner(System.in);
-            try{
+            try {
                 switch (scan.nextInt()) {
                     case 1:
                         choix = false;
@@ -34,9 +34,10 @@ public class AideHachage {
                         break;
                     case 4:
                         System.exit(0);
-                    default: System.out.println("\nVotre choix n'est pas disponible\n");
+                    default:
+                        System.out.println("\nVotre choix n'est pas disponible\n");
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println("\nVeuillez entrer un choix valide\n");
                 scan.nextLine();
 

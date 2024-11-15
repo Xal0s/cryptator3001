@@ -2,22 +2,19 @@ package menu;
 
 import RC4.RC4;
 import aide.Aide;
+import java.util.Scanner;
 import polybe.Polybe;
 import rotationX.ChiffrementRotation;
 import sauvegarde.Sauvegarde;
 import vigenere.ChiffrementVigenere;
 
-import java.util.Scanner;
-
 public class MenuChiffrement {
-    public static void afficherMenuChiffrement(String mdp){
+    public static void afficherMenuChiffrement(String mdp) {
         boolean choix = true;
         String cle = null;
         String decalageStr;
         int decalage;
         Scanner scanner = new Scanner(System.in);
-        while (choix) {
-
             System.out.println(
                 "Quel algorithme voulez-vous utiliser ? :\n" +
                 "1 - Rotation(x) \n" +
@@ -128,7 +125,6 @@ public class MenuChiffrement {
                 System.out.println("\nVeuillez entrer un choix valide\n");
                 scan.nextLine();
             }
-
         }
     }
 }

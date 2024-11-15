@@ -1,8 +1,6 @@
 package RC4;
 
-import menu.Menu;
-
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class RC4 {
 
@@ -40,16 +38,24 @@ public class RC4 {
         byte temp = S[indiceI]; // Échange des valeurs de temp a partir de S
         S[indiceI] = S[indiceJ]; // Échange des valeurs de S[i] a partir de S[j]
         S[indiceJ] = temp; // Échange des valeurs de S[j] a partir de temp
-        int somme = S[indiceI] + S[indiceJ]; // Calcule la somme des valeurs dans S aux positions indiceI et indiceJ.
-                                             // S[indiceI] et S[indiceJ] sont des valeurs pseudo-aléatoires issues de la permutation S.
-                                             // L'addition de ces deux valeurs sert à générer un nouvel index de manière difficile à prédire.
+        int somme = S[indiceI] + S[indiceJ]; // Calcule la somme des valeurs dans S aux positions
+                                             // indiceI et indiceJ.
+                                             // S[indiceI] et S[indiceJ] sont des valeurs
+                                             // pseudo-aléatoires issues de la permutation S.
+                                             // L'addition de ces deux valeurs sert à générer un
+                                             // nouvel index de manière difficile à prédire.
 
-        int index = somme & 0xFF; // Applique un masque binaire pour restreindre la somme à 8 bits (0 à 255).
-                                  // Le masque & 0xFF est utilisé pour s'assurer que le résultat reste dans la plage d'un octet,
-                                  // même si la somme dépasse 255. Cela permet d'utiliser index comme un index valide dans le tableau S.
+        int index = somme & 0xFF; // Applique un masque binaire pour restreindre la somme à 8 bits
+                                  // (0 à 255).
+                                  // Le masque & 0xFF est utilisé pour s'assurer que le résultat
+                                  // reste dans la plage d'un octet,
+                                  // même si la somme dépasse 255. Cela permet d'utiliser index
+                                  // comme un index valide dans le tableau S.
 
-        byte resultat = S[index]; // Récupère la valeur dans S à la position index pour générer l'octet pseudo-aléatoire.
-                                  // Cet octet extrait de S[index] est considéré comme un élément du flux pseudo-aléatoire généré
+        byte resultat = S[index]; // Récupère la valeur dans S à la position index pour générer
+                                  // l'octet pseudo-aléatoire.
+                                  // Cet octet extrait de S[index] est considéré comme un élément du
+                                  // flux pseudo-aléatoire généré
                                   // par l'algorithme, et sera utilisé pour le chiffrement.
 
         return resultat; // Retourne l'octet du flux pseudo-aléatoire
@@ -57,7 +63,7 @@ public class RC4 {
 
     // Chiffre ou déchiffre un tableau de bytes
     public byte[] chiffrer(byte[] donnees) {
-        byte[] resultat = new byte[donnees.length];  // Tableau de bytes pour le résultat
+        byte[] resultat = new byte[donnees.length]; // Tableau de bytes pour le résultat
 
         for (int k = 0; k < donnees.length; k++) { // Chiffrement ou déchiffrement
             resultat[k] = (byte) (donnees[k] ^ fluxOctetCle()); // Chiffrement ou déchiffrement

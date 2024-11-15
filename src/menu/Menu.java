@@ -3,7 +3,6 @@ package menu;
 import aide.Aide;
 import motDePasse.DemandeMotDePasse;
 import sauvegarde.Sauvegarde;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -53,7 +52,6 @@ public class Menu {
                     System.exit(0);
                 default: System.out.println("\nVotre choix n'est pas disponible\n");
 
-            }
             } catch (Exception e) {
                 System.out.println("\nVeuillez entrer un chiffre valide\n");
                 scan.nextLine();

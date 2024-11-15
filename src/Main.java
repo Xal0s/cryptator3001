@@ -6,11 +6,11 @@ public class Main {
 
         String mdp = "";
 
-        System.out.println(
-            "****************************\n" +
-            "**Bienvenue sur PaKassable**\n" +
-            "****************************\n"
-        );
+        System.out.println("""
+                ****************************
+                **Bienvenue sur PaKassable**
+                ****************************
+                """);
 
         mdp = DemandeMotDePasse.demandeMotDePasse();
 

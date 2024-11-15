@@ -3,9 +3,10 @@ package aide;
 public class Vigenere {
     public static String afficherAideVigenere(String mdp) {
         System.out.println(
-            "Le chiffrement de Vigenère remplace chaque lettre d’un message par une autre lettre, en fonction d’une clé secrète. \n" +
-            "La méthode de Vigenère utilise une clé qui peut être plus courte ou aussi longue que le message à protéger.\n"
-        );
+                """
+                        Le chiffrement de Vigen\u00e8re remplace chaque lettre d\u2019un message par une autre lettre, en fonction d\u2019une cl\u00e9 secr\u00e8te.
+                        La m\u00e9thode de Vigen\u00e8re utilise une cl\u00e9 qui peut \u00eatre plus courte ou aussi longue que le message \u00e0 prot\u00e9ger.
+                        """);
         return mdp;
     }
 }
