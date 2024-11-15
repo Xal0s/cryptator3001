@@ -66,8 +66,7 @@ public class MenuChiffrement {
                         case 2:
                             // Vérification des caractères dans le mot de passe pour Vigenère
                             if (!mdp.matches("[a-zA-Z]+")) { // Exclut les chiffres et les
-                                                             // caractères
-                                                             // spéciaux
+                                                             // caractères spéciaux
                                 System.out.println(
                                         "Le chiffrement de Vigenère ne supporte pas les chiffres ni les caractères spéciaux.");
                                 break;
@@ -140,27 +139,28 @@ public class MenuChiffrement {
                             } catch (Exception e) {
                                 System.out.println(
                                         "Erreur lors du chiffrement AES : " + e.getMessage());
+                                menu.Menu.afficherMenu(mdp);
                             }
                             break;
 
-                        case 7:
+                        case 6:
                             choix = false;
                             Aide.afficherAide(mdp);
                             break;
 
-                        case 8:
+                        case 7:
                             choix = false;
                             Menu.afficherMenu(mdp);
                             break;
 
-                        case 9:
+                        case 8:
                             System.exit(0);
 
                         default:
                             System.out.println("\nVotre choix n'est pas disponible\n");
                     }
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Erreur : " + e);
                 menu.Menu.afficherMenu(mdp);
             }
