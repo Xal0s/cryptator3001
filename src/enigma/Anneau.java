@@ -20,19 +20,6 @@ public class Anneau{
         };
 
         Scanner scanner = new Scanner(System.in);
-/*
-        // Demande à l'utilisateur de saisir la position de l'anneau en entrant une lettre entre a et z,
-        // conversion e minuscule dans le cas où l'utilisateur entre une majuscule
-        // charAt(0) extrait le caractere
-        System.out.print("Quelle est la position de l'anneau ? (lettre de a à z) : ");
-        char choixAnneau = scanner.next().toLowerCase().charAt(0);
-
-        // Vérifie que l'utilisateur a entré une lettre valide entre 'a' et 'z'
-        if (choixAnneau < 'a' || choixAnneau > 'z') {
-            System.out.println("Entrée invalide. Veuillez entrer une lettre de 'a' à 'z'.");
-            return;
-        }
-*/
 
     char choixAnneau;
 
