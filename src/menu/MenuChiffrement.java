@@ -26,9 +26,9 @@ public class MenuChiffrement {
                 "4 - Carré de Polybe\n" +
                 "5 - Enigma\n" +
                 "6 - Sauvegarder\n" +
-                "6 - Avoir de l'aide\n" +
-                "7 - Retour\n" +
-                "8 - Quitter\n"
+                "7 - Avoir de l'aide\n" +
+                "8 - Retour\n" +
+                "9 - Quitter\n"
             );
             System.out.println(mdp);
 
@@ -117,6 +117,7 @@ public class MenuChiffrement {
                         break;
                     case 8 :
                         choix = false;
+                        scan.nextLine();
                         Menu.afficherMenu(mdp);
                     case 9:
                         System.exit(0);
@@ -124,7 +125,8 @@ public class MenuChiffrement {
                         System.out.println("\nVotre choix n'est pas disponible\n");
                 }
             }catch(Exception e){
-                System.out.println("\nVotre choix n'est pas disponible\n");
+                System.out.println("\nVeuillez entrer un choix valide\n");
+                scan.nextLine();
             }
 
         }

@@ -25,6 +25,7 @@ public class Menu {
 
             Scanner scan = new Scanner(System.in);
 
+            try {
             switch (scan.nextInt()) {
                 case 1:
                     choix = false;
@@ -52,6 +53,10 @@ public class Menu {
                     System.exit(0);
                 default: System.out.println("\nVotre choix n'est pas disponible\n");
 
+            }
+            } catch (Exception e) {
+                System.out.println("\nVeuillez entrer un chiffre valide\n");
+                scan.nextLine();
             }
         }
         return mdp;

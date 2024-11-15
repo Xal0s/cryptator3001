@@ -49,6 +49,7 @@ public class MenuHachage {
                         break;
                     case 5 :
                         choix = false;
+                        scan.nextLine();
                         mdp = Menu.afficherMenu(mdp);
                         break;
                     case 6 :
@@ -58,6 +59,7 @@ public class MenuHachage {
                 }
             } catch (Exception e) {
                 System.out.println("\nVeuillez entrer un chiffre valide\n");
+                scan.nextLine();
             }
         }
     }
