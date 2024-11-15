@@ -16,7 +16,7 @@ public class Menu {
                 "1 - Entrer un nouveau mot de passe\n"+
                 "2 - Chiffrer votre mot de passe \n" +
                 "3 - Hacher votre mot de passe\n" +
-                "4 - Dechiffrer votre mot de passe"+
+                "4 - Dechiffrer votre mot de passe\n"+
                 "5 - Sauvegarde\n" +
                 "6 - Avoir de l'aide\n" +
                 "7 - Quitter\n"
