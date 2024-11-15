@@ -8,6 +8,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import polybe.Polybe;
 import rotationX.ChiffrementRotation;
+import sauvegarde.Sauvegarde;
 import vigenere.ChiffrementVigenere;
 
 public class MenuChiffrement {
@@ -26,9 +27,10 @@ public class MenuChiffrement {
                             3 - RC4
                             4 - Carré de Polybe
                             5 - AES
-                            6 - Avoir de l'aide
-                            7 - Retour
-                            8 - Quitter
+                            6 - Sauvegarder
+                            7 - Avoir de l'aide
+                            8 - Retour
+                            9 - Quitter
                             """);
                     System.out.println("Mot de passe actuel : " + mdp);
 
@@ -143,16 +145,19 @@ public class MenuChiffrement {
                             break;
 
                         case 6:
+                            Sauvegarde.SauvegardeMdp(mdp);
+                            break;
+                        case 7:
                             choix = false;
                             Aide.afficherAide(mdp);
                             break;
 
-                        case 7:
+                        case 8:
                             choix = false;
                             Menu.afficherMenu(mdp);
                             break;
 
-                        case 8:
+                        case 9:
                             System.exit(0);
 
                         default:
