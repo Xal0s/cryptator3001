@@ -15,78 +15,90 @@ public class RC4 {
 
     // Initialisation du tableau S avec la clé
     private void initialiserS(byte[] cle) {
-        int longueurCle = cle.length; // Longueur de la clé
+        int longueurCle = cle.length;
 
-        for (int i = 0; i < 256; i++) { // Initialisation de S
+        for (int i = 0; i < 256; i++) {
             S[i] = (byte) i; // Remplir S avec des valeurs de 0 à 255
         }
 
-        int j = 0; // Indice j
-        for (int i = 0; i < 256; i++) { // Permutation de S
-            j = (j + S[i] + cle[i % longueurCle]) & 0xFF; // Calcul de j
-            byte temp = S[i]; // Échange des valeurs de temp a partir de S
-            S[i] = S[j]; // Échange des valeurs de S[i] a partir de S[j]
-            S[j] = temp; // Échange des valeurs de S[j] a partir de temp
+        int j = 0;
+        for (int i = 0; i < 256; i++) {
+            j = (j + S[i] + cle[i % longueurCle]) & 0xFF;
+            byte temp = S[i];
+            S[i] = S[j];
+            S[j] = temp;
         }
     }
 
     // Générer un octet pseudo-aléatoire pour le flux
     private byte fluxOctetCle() {
-        indiceI = (indiceI + 1) & 0xFF; // Calcul de i
-        indiceJ = (indiceJ + S[indiceI]) & 0xFF; // Calcul de j
+        indiceI = (indiceI + 1) & 0xFF;
+        indiceJ = (indiceJ + S[indiceI]) & 0xFF;
 
-        byte temp = S[indiceI]; // Échange des valeurs de temp a partir de S
-        S[indiceI] = S[indiceJ]; // Échange des valeurs de S[i] a partir de S[j]
-        S[indiceJ] = temp; // Échange des valeurs de S[j] a partir de temp
-        int somme = S[indiceI] + S[indiceJ]; // Calcule la somme des valeurs dans S aux positions
-                                             // indiceI et indiceJ.
-                                             // S[indiceI] et S[indiceJ] sont des valeurs
-                                             // pseudo-aléatoires issues de la permutation S.
-                                             // L'addition de ces deux valeurs sert à générer un
-                                             // nouvel index de manière difficile à prédire.
+        byte temp = S[indiceI];
+        S[indiceI] = S[indiceJ];
+        S[indiceJ] = temp;
 
-        int index = somme & 0xFF; // Applique un masque binaire pour restreindre la somme à 8 bits
-                                  // (0 à 255).
-                                  // Le masque & 0xFF est utilisé pour s'assurer que le résultat
-                                  // reste dans la plage d'un octet,
-                                  // même si la somme dépasse 255. Cela permet d'utiliser index
-                                  // comme un index valide dans le tableau S.
-
-        byte resultat = S[index]; // Récupère la valeur dans S à la position index pour générer
-                                  // l'octet pseudo-aléatoire.
-                                  // Cet octet extrait de S[index] est considéré comme un élément du
-                                  // flux pseudo-aléatoire généré
-                                  // par l'algorithme, et sera utilisé pour le chiffrement.
-
-        return resultat; // Retourne l'octet du flux pseudo-aléatoire
+        return S[(S[indiceI] + S[indiceJ]) & 0xFF];
     }
 
     // Chiffre ou déchiffre un tableau de bytes
-    public byte[] chiffrer(byte[] donnees) {
-        byte[] resultat = new byte[donnees.length]; // Tableau de bytes pour le résultat
-
-        for (int k = 0; k < donnees.length; k++) { // Chiffrement ou déchiffrement
-            resultat[k] = (byte) (donnees[k] ^ fluxOctetCle()); // Chiffrement ou déchiffrement
+    private byte[] chiffrer(byte[] donnees) {
+        byte[] resultat = new byte[donnees.length];
+        for (int k = 0; k < donnees.length; k++) {
+            resultat[k] = (byte) (donnees[k] ^ fluxOctetCle());
         }
-
         return resultat;
     }
 
-    public static String utilisationRC4(String texte, String cle) {
+    // Convertir une chaîne encodée en tableau de bytes
+    private static byte[] parseByteArray(String arrayAsString) {
+        String[] tokens = arrayAsString.replace("[", "").replace("]", "").split(", ");
+        byte[] result = new byte[tokens.length];
+        for (int i = 0; i < tokens.length; i++) {
+            result[i] = Byte.parseByte(tokens[i]);
+        }
+        return result;
+    }
 
+    // Méthode à appeler pour chiffrer ou déchiffrer un texte
+    public static String utilisationRC4(String texte, String cle) {
         if (texte == null || cle == null) {
             throw new IllegalArgumentException("Le texte et la clé ne doivent pas être null.");
         }
 
-        // Convertir le texte et la clé en tableau de bytes
-        byte[] texteBytes = texte.getBytes(); // Convertir le texte en tableau de bytes
-        byte[] cleBytes = cle.getBytes(); // Convertir la clé en tableau de bytes
+        byte[] texteBytes;
+        if (texte.startsWith("[") && texte.endsWith("]")) {
+            // Si le texte ressemble à un tableau d'octets encodé, le convertir
+            texteBytes = parseByteArray(texte);
+        } else {
+            // Sinon, le considérer comme un texte brut
+            texteBytes = texte.getBytes();
+        }
+
+        // Convertir la clé en tableau de bytes
+        byte[] cleBytes = cle.getBytes();
 
         // Créer une instance de RC4 avec la clé
-        RC4 rc4 = new RC4(cleBytes); // Initialiser RC4 avec la clé
+        RC4 rc4 = new RC4(cleBytes);
 
-        byte[] texteChiffre = rc4.chiffrer(texteBytes); // Chiffrer le texte
+        // Chiffrer ou déchiffrer
+        byte[] resultatBytes = rc4.chiffrer(texteBytes);
 
-        return Arrays.toString(texteChiffre);
+        // Tenter de convertir le résultat en texte lisible
+        boolean isReadable = true;
+        for (byte b : resultatBytes) {
+            if (b < 32 || b > 126) { // Vérifie si ce sont des caractères imprimables ASCII
+                isReadable = false;
+                break;
+            }
+        }
+
+        if (isReadable) {
+            return new String(resultatBytes); // Retourner la chaîne lisible
+        } else {
+            return Arrays.toString(resultatBytes); // Sinon, retourner le tableau d'octets
+        }
     }
+
 }
