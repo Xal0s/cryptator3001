@@ -26,10 +26,9 @@ public class MenuChiffrement {
                             3 - RC4
                             4 - Carré de Polybe
                             5 - AES
-                            6 - Enigma
-                            7 - Avoir de l'aide
-                            8 - Retour
-                            9 - Quitter
+                            6 - Avoir de l'aide
+                            7 - Retour
+                            8 - Quitter
                             """);
                     System.out.println("Mot de passe actuel : " + mdp);
 
